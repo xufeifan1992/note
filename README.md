@@ -1,2 +1,2 @@
-# imgNote
+# Note
 note的图床
