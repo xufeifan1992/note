@@ -1,6 +1,6 @@
 # 笔记
-[数据结构](#dataStructure)
-[MySQL](#mysql)
+[数据结构](#dataStructure)|[MySQL](#mysql)
+-|-
 
 <span id="mysql">MySQL</span>
 * [MySQL的隔离级别](https://github.com/xufeifan1992/note/blob/master/MD/MySQL/2019-4-19-%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB.md)
