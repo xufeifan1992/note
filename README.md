@@ -1,8 +1,28 @@
 # 笔记
 [数据结构](#dataStructure)|[MySQL](#mysql)
 -|-
-<th align="center"><g-emoji class="g-emoji" alias="bar_chart" fallback-src="https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ca.png">📊</g-emoji></th>
-
+<table>
+<thead>
+<tr>
+<th align="center"><g-emoji class="g-emoji" alias="bar_chart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ca.png">📊</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="crossed_swords" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2694.png">⚔️</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="desktop_computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5a5.png">🖥</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="busstop" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f68f.png">🚏</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="beach_umbrella" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d6.png">🏖</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="foggy" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f301.png">🌁</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="postbox" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ee.png">📮</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="mag" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png">🔍</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="rocket" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png">🚀</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="rainbow" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f308.png">🌈</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="bulb" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png">💡</g-emoji></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="#%E5%B8%B8%E7%94%A8%E9%9B%86%E5%90%88">集合</a></td>
+<td align="center"><a href="#java-%E5%A4%9A%E7%BA%BF%E7%A8%8B">多线程</a></td>
+<td align="center"><a href="#jvm">JVM</a></td>
+<
 <br>
 <br>
 <br>
