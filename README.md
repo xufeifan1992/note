@@ -1,5 +1,5 @@
 # 笔记
-<img src="https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ca.png" width = 30% height = 30% />|![enter description here](https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ee.png)
+<img src="https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ca.png" width = 10% height = 10% />|<img src="https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ee.png" width = 10% height = 10% />
 -|-
 [数据结构](#dataStructure)|[MySQL](#mysql)
 
