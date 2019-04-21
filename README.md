@@ -6,7 +6,7 @@
 <table>
 <thead>
 <tr>
-<th align="center"><g-emoji class="g-emoji" alias="bar_chart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ca.png">📊</g-emoji></th>
+<th align="center"><g-emoji class="g-emoji" alias="bar_chart" fallback-src="https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ca.png">📊</g-emoji></th>
 <th align="center"><g-emoji class="g-emoji" alias="crossed_swords" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2694.png">⚔️</g-emoji></th>
 <th align="center"><g-emoji class="g-emoji" alias="desktop_computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5a5.png">🖥</g-emoji></th>
 <th align="center"><g-emoji class="g-emoji" alias="busstop" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f68f.png">🚏</g-emoji></th>
@@ -21,7 +21,7 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><a href="#%E5%B8%B8%E7%94%A8%E9%9B%86%E5%90%88">集合</a></td>
+<td align="center">[数据结构](#dataStructure)</td>
 <td align="center"><a href="#java-%E5%A4%9A%E7%BA%BF%E7%A8%8B">多线程</a></td>
 <td align="center"><a href="#jvm">JVM</a></td>
 <td align="center"><a href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%B8%E5%85%B3">分布式</a></td>
