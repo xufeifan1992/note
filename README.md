@@ -1,5 +1,6 @@
 # 笔记
-(https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ca.png)|(https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ee.png)
+![enter description here](https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ca.png)
+|(https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ee.png)
 -|-
 [数据结构](#dataStructure)|[MySQL](#mysql)
 
