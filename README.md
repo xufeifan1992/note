@@ -1,6 +1,7 @@
 # 笔记
 [数据结构](#dataStructure)|[MySQL](#mysql)
 -|-
+<th align="center"><g-emoji class="g-emoji" alias="bar_chart" fallback-src="https://github.com/xufeifan1992/note/blob/master/images/icon/1f4ca.png">📊</g-emoji></th>
 
 <br>
 <br>
