@@ -1,4 +1,4 @@
-**SpringCloud**
+### SpringCloud
 
 <br>
 <br>
@@ -18,7 +18,7 @@
   <br>
   <br>
   
-  **12-Factor应用**
+  #### 12-Factor应用
 
 <br>
 <br>
@@ -39,4 +39,19 @@
 <br>
 
 ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201953/1556848229317.png)
+
+
+<br>
+<br>
+
+#### Bootstrap上下文
+
+<br>
+<br>
+
+* 理解Bootstrap上下文
+	* Bootstrap上下文是Spring Cloud新引入的，与传统Spring上下文相同，系ConfigurableApplicationContext实例，由BootStrapApplicationListener在监听ApplicationEnviromentPreparedEvent(springBoot中事件)时创建
+* Spring事件/监听器模式
+	* ApplicationEvent/ApplicationListenter
+
  
