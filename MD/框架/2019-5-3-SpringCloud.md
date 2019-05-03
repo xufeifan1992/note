@@ -54,4 +54,59 @@
 * Spring事件/监听器模式
 	* ApplicationEvent/ApplicationListenter
 
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201953/1556850814858.png)
+
+<br>
+
+```java
+
+package com.xuff.springcloudxuff01.event;
+
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+/**
+ * Spring 事件/监听器 Demo
+ * Created by xufei
+ * 2019/5/3
+ */
+public class SpringEventListenerDemo {
+    public static void main(String[] args) {
+
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+
+        //增加监听器
+        context.addApplicationListener(new MyApplicationListener());
+
+        //上下文启动
+        context.refresh();
+
+        //发布事件
+        context.publishEvent(new MyAppLicationEvent("Hello World"));
+    }
+
+    private static class MyApplicationListener implements ApplicationListener<MyAppLicationEvent> {
+
+        @Override
+        public void onApplicationEvent(MyAppLicationEvent event) {
+            System.out.println("MyApplicationLintener receives event source  \n" + event.getSource());
+        }
+    }
+
+    private static class MyAppLicationEvent extends ApplicationEvent {
+        /**
+         * Create a new ApplicationEvent.
+         *
+         * @param source the object on which the event initially occurred (never {@code null})
+         */
+        public MyAppLicationEvent(Object source) {
+            super(source);
+        }
+    }
+}
+
+
+```
+
  
