@@ -109,4 +109,100 @@ public class SpringEventListenerDemo {
 
 ```
 
+
+<br>
+<br>
+
+* 理解SpringApplication
+	* SpringApplication是Spring Boot引导启动类，与Spring上下文，事件，监听器以及环境等组件关系紧密，其中提供了控制Spring Boot应用特征的行为方法
+* Spring Boot 应用运行监听器
+	* SpringApplicationRunListener 
+
+
+```java
+
+package com.xuff.springcloudxuff01.event;
+
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
+
+/**
+ * Spring 事件/监听器 Demo
+ * Created by xufei
+ * 2019/5/3
+ */
+public class SpringEventListenerDemo {
+    public static void main(String[] args) {
+
+        //AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyApplicationListener.class);
+
+        //增加监听器
+        //context.addApplicationListener(new MyApplicationListener());
+
+        //注册Configuration 的方式
+        //context.register(MyApplicationListener.class);
+
+        //上下文启动
+        //context.refresh();
+
+        //发布事件
+        context.publishEvent(new MyAppLicationEvent("Hello World"));
+    }
+
+    @Component
+    private static class MyApplicationListener implements ApplicationListener<MyAppLicationEvent> {
+
+        @Override
+        public void onApplicationEvent(MyAppLicationEvent event) {
+            System.out.println("MyApplicationLintener receives event source  \n" + event.getSource());
+        }
+    }
+
+    private static class MyAppLicationEvent extends ApplicationEvent {
+        /**
+         * Create a new ApplicationEvent.
+         *
+         * @param source the object on which the event initially occurred (never {@code null})
+         */
+        public MyAppLicationEvent(Object source) {
+            super(source);
+        }
+    }
+}
+
+```
+
+ ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201953/1556865734044.png)
  
+ <br>
+ <br>
+ 
+ * 理解Spring Boot事件
+	 * 事件触发器:EventPublishingRunListener
+		 * ApplicaitonStartedEvent
+		 * ApplicationEnvironmentPreparedEvent
+		 * ApplicationPreparedEvent
+		 * ApplicationReadyEvent/ApplicationFailedEvent
+		 
+<br>
+
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201953/1556866520872.png)
+
+<br>
+<br>
+
+* 理解Spring Boot/Spring Cloud上下文层次关系
+	* Spring Boot 上下文
+		* 非web应用:AnnotationConfigApplicationContext
+		* web应用：AnnotationConfigEmbeddedWebApplicationContext
+	* Spring Cloud 上下文:Bootstrap(父）
+
+<br>
+
+访问beans端点
+
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201953/1556871919792.png)
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201953/1556871938625.png)
