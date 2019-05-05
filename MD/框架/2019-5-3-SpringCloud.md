@@ -206,3 +206,26 @@ public class SpringEventListenerDemo {
 
 ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201953/1556871919792.png)
 ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201953/1556871938625.png)
+
+<br>
+
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201954/1556935980944.png)
+
+
+<br>
+<br>
+
+#### Actuator Endpoints
+
+<br>
+<br>
+
+* 理解Actuator Endpoints
+	* Actuator 中文直译“传动装置”，在Spring Boot使用场景中表示为"生产而准备的特性"(Production-ready features),这些特性通过HTTP端口的形式，帮助相关人员管理和监控应用，大致上可以归类为：
+		* 监控类：“断电信息”，“应用信息”，“外部话配置信息”，“指标信息”，“健康检查”，“Bean管理”，“Web URL映射管理”，“Web URL跟踪”
+		* 管理类：“外部化配置”，“日志配置”，“线程dump”，“堆dump”，“关闭应用”
+
+<br>
+
+==注意：Spring Boot1.5开始Actuator增强了安全能力==
+
