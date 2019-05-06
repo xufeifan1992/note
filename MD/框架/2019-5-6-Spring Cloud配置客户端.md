@@ -15,10 +15,22 @@
 		* addActiveProfiles(String)
 		* setDefaultProfiles(String...)
 * Spring Properties
+	* 属性又被称之为配置项，key-value的形式。在Spring应用中常用作占位符(Placeholder),而在API层面，Spring Framework如下抽象来表述
+		* 组合属性：PropertySources
+		* 单一属性：PropertySource
 * Spring 事件监听器
 * ConfigFileApplicationListener
 
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557133553453.png)
+
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557135040181.png)
+
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557134010262.png)
+
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557135644395.png)
+
+
 <br>
-<br>
+<br> 
 
 
