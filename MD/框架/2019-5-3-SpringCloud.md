@@ -237,6 +237,13 @@ public class SpringEventListenerDemo {
 	* 暂定 : /pause
 	* 恢复 ：/resume
 
+<br>
+<br>
+
+`Dubbo与Spring Cloud对比：
+	Dubbo不太关注应用整体情况，更关注于服务健康
+	Spring Cloud 云计算支持的覆盖面更广
+`
 
 `注意：Spring Boot1.5开始Actuator增强了安全能力`
 
