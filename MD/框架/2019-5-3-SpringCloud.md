@@ -27,18 +27,18 @@
 <br>
 <br>
 
-1.Codebase   代码管理  svn git
-2.Dependencies  依赖  maven gradle jvm等
-3.Config  配置 外部化配置(启动参数,文件等) 内部化配置(代码修改)
-4.Backing Services  后端服务
-5.Build,release,run  构建，发布，运行
-6.Processes  分布式进程
-7.Port binding  端口绑定
-8.Concurrency 并发 
-9.Disposability 易处理
-10.Dev/prod party 环境等价
-11.Logs 日志
-12.Admin processes  管理进程
+* Codebase   代码管理  svn git
+* Dependencies  依赖  maven gradle jvm等
+* Config  配置 外部化配置(启动参数,文件等) 内部化配置(代码修改)
+* Backing Services  后端服务
+* Build,release,run  构建，发布，运行
+* Processes  分布式进程
+* Port binding  端口绑定
+* Concurrency 并发 
+* Disposability 易处理
+* Dev/prod party 环境等价
+* Logs 日志
+* Admin processes  管理进程
 
 <br>
 
