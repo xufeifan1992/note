@@ -231,5 +231,5 @@ public class SpringEventListenerDemo {
 
 <br>
 
-<font color=red>注意：Spring Boot1.5开始Actuator增强了安全能力</font>
+`注意：Spring Boot1.5开始Actuator增强了安全能力`
 
