@@ -19,7 +19,10 @@
 		* 组合属性：PropertySources
 		* 单一属性：PropertySource
 * Spring 事件监听器
+	* ApplicationEvent
+	* ApplicationListener
 * ConfigFileApplicationListener
+	* SpringBoot中，用于读取默认以及Profile关联的配置文件(application,properties)
 
 ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557133553453.png)
 
@@ -29,8 +32,51 @@
 
 ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557135644395.png)
 
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557149369581.png)
+
 
 <br>
 <br> 
 
+* SpringBoot配置文件
+	* application.properties
+		* 加载器:PropertiesPropertySourceLoader
+	* application.yml /application.yaml
+		* 加载器:YamlPropertySourceLoader
+* Environment端点
+	* 请求URI:/env
+		* 数据来源:EnvironmentEndPoint
+		* Controller来源:EnvironmentMVCEndpoint
 
+<br>
+
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557149677648.png)
+
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557149899196.png)
+
+
+<br>
+
+* HTTP请求
+	* 400：bad request 请求不合法
+	* 401：认证失败
+	* 403：forbbidden 鉴权不够
+	* 404：服务器找不到请求
+	* 405：方法禁用
+	* 500：服务器内部错误
+	* 503：服务不可用
+
+<br>
+<br>
+
+#### Bootstrap 配置属性
+
+
+<br>
+<br>
+
+* Bootstrap配置文件
+* 调整Bootstrap配置文件路径
+* 覆盖源成配配置文件属性
+* 自定义Bootstrap配置
+* 自定义Bootstrap配置属性源
