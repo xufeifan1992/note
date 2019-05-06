@@ -13,7 +13,7 @@
 	* 应用程序可以通过调用ConfigurationEnvironment接口控制Profile的激活，如：、
 		* setActiveProfiles(String...)
 		* addActiveProfiles(String)
-		* setDefaultProfiles(String)
+		* setDefaultProfiles(String...)
 * Spring Properties
 * Spring 事件监听器
 * ConfigFileApplicationListener
