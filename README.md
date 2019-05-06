@@ -30,4 +30,5 @@
 <br>
 
 <span id = "框架">框架</span>
-* [springCloud](https://github.com/xufeifan1992/note/blob/master/MD/%E6%A1%86%E6%9E%B6/2019-5-3-SpringCloud.md)
+* [SpringCloud](https://github.com/xufeifan1992/note/blob/master/MD/%E6%A1%86%E6%9E%B6/2019-5-3-SpringCloud.md)
+* [SpringCloud客户端配置](https://github.com/xufeifan1992/note/blob/master/MD/%E6%A1%86%E6%9E%B6/2019-5-6-Spring%20Cloud%E9%85%8D%E7%BD%AE%E5%AE%A2%E6%88%B7%E7%AB%AF.md)
