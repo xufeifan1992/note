@@ -230,6 +230,13 @@ public class SpringEventListenerDemo {
 		* 管理类：“外部化配置”，“日志配置”，“线程dump”，“堆dump”，“关闭应用”
 
 <br>
+<br>
+
+* Spring Cloud 扩展了Actuator Endpoints
+	* 上下文重启 ： /restart
+	* 暂定 : /pause
+	* 恢复 ：/resume
+
 
 `注意：Spring Boot1.5开始Actuator增强了安全能力`
 
