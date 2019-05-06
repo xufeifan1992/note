@@ -20,6 +20,9 @@
   
   #### 12-Factor应用
 
+下载地址：
+https://github.com/xufeifan1992/TechnicalSummary/blob/master/Spring%20Cloud%20%E6%8A%80%E6%9C%AF%E4%BD%93%E7%B3%BB.xmind
+
 <br>
 <br>
 
