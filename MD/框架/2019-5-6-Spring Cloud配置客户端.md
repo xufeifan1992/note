@@ -80,3 +80,21 @@
 * 覆盖源成配配置文件属性
 * 自定义Bootstrap配置
 * 自定义Bootstrap配置属性源
+
+ ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201958/1557308502622.png)
+ 
+ 
+ ##### 调整Bootstrap配置
+ 
+ <br>
+ 
+ 参考：
+ ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201958/1557308699649.png)
+ 
+ 
+ ```java
+ 
+ String configName = environment
+				.resolvePlaceholders("${spring.cloud.bootstrap.name:bootstrap}");
+ 
+ ```
