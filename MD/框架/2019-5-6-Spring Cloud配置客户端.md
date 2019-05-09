@@ -176,8 +176,8 @@ bootstrap配置文件名称发生了改变“spring-cloud”，意味着有三�
 
 #### 自定义Bootstrap配置
 
-1.创建 `META-INF/spring.factors文件(类似于Spring Boot Starter) `
-2.自定义Bootstrap配置Configuration
+1.创建 `META-INF/spring.factors文件(类似于Spring Boot Starter) `  
+2.自定义Bootstrap配置Configuration  
 3.
 ```java
 package com.xuff.springcloudxuff02.bootstrap;
