@@ -100,7 +100,7 @@
  
  
  
- ##### Bootstrap配置
+ #### Bootstrap配置
  
  <br>
  
@@ -108,7 +108,7 @@
  ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201958/1557308699649.png)
  
  
-  ##### Bootstrap配置文件
+  #### Bootstrap配置文件
   
   <br>
   
@@ -133,6 +133,104 @@
  
  ```
  
+ #### 调整Bootstrap配置
  
+##### 调整Bootstrap配置文件名称
  
+ <br>
+ <br>
  
+ 调整启动参数
+ 
+ <br>
+
+
+```java
+-- spring.cloud.bootstrap.name = spring-cloud
+
+```
+bootstrap配置文件名称发生了改变“spring-cloud”，意味着有三个文件
+
+* applicaiton.properties
+* bootstrap.properties
+* spring-cloud.properties
+
+
+<br>
+
+#### 覆盖远程配置属性
+
+<br>
+
+默认情况，Spring Cloud 是允许覆盖的，spring.cloud.config.allowOverride = true
+
+<br>
+
+通过程序启动参数，调整这个值为false
+
+```java
+-- spring.cloud.config.allowOverride = false 
+```
+
+<br>
+
+#### 自定义Bootstrap配置
+
+1.创建 `META-INF/spring.factors文件(类似于Spring Boot Starter) `
+2.自定义Bootstrap配置Configuration
+3.
+```java
+package com.xuff.springcloudxuff02.bootstrap;
+
+import org.springframework.context.ApplicationContextInitializer;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.core.env.MapPropertySource;
+import org.springframework.core.env.MutablePropertySources;
+import org.springframework.core.env.PropertySource;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Bootstrap 配置Bean
+ * Created by xufei
+ * 2019/5/9
+ */
+@Configuration
+public class MyConfiguration implements ApplicationContextInitializer {
+    @Override
+    public void initialize(ConfigurableApplicationContext applicationContext) {
+        ConfigurableEnvironment environment =
+                applicationContext.getEnvironment();
+        //获取PropertySources
+        MutablePropertySources propertySources =
+                environment.getPropertySources();
+
+        //定义一个新的propertySource
+        propertySources.addFirst(createPropertySource());
+    }
+
+    private PropertySource createPropertySource() {
+        Map<String, Object> source = new HashMap<>();
+        source.put("name","xuff");
+        PropertySource propertySource = new MapPropertySource("my-property-source", source);
+
+        return propertySource;
+    }
+}
+
+```
+
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201959/1557389610253.png)
+
+3.配置META-INF/spring.factories文件，关联Key `org.springframework.cloud.BootstrapConfiguration=com.xuff.springcloudxuff02.bootstrap.MyConfiguration`
+
+#### 自定义Bootstrap配置属性源
+
+<br>
+<br>
+
+1.实现`PropertySourceLoader`
+2.
