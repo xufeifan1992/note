@@ -232,5 +232,5 @@ public class MyConfiguration implements ApplicationContextInitializer {
 <br>
 <br>
 
-1.实现`PropertySourceLoader`
+1.实现`PropertySourceLoader`  
 2.
