@@ -84,7 +84,23 @@
  ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201958/1557308502622.png)
  
  
- ##### 调整Bootstrap配置
+ <br>
+ 
+ ##### Environment
+ 
+ Environment:PropertySource  :  1:1
+ PropertySources:
+[0] PropertySource(Map)
+ 	Spring.application.name = spring-cloud-config-client
+	
+[1] PropertySource(Map)
+	Spring.application.name = spring.cloud.config.client.demo
+	
+`取值时,如果key存在，后面的值会被忽略`
+ 
+ 
+ 
+ ##### Bootstrap配置
  
  <br>
  
@@ -92,9 +108,31 @@
  ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201958/1557308699649.png)
  
  
+  ##### Bootstrap配置文件
+  
+  <br>
+  
+  `BootstrapApplicationListener` ：加载时机早于ConfigFileApplicaitonListener
+  
+  ConfigFileApplicaitonListener：
+  原因 ： `DEFAULT_ORDER = Ordered.HIGHEST_PRECEDENCE + 10;` （第十一位 ）
+  
+  BootstrapApplicationListener：
+  原因：DEFAULT_ORDER = Ordered.HIGHEST_PRECEDENCE + 5;（第六位）
+  
+  ` 如果需要调整 控制Bootstrap上下文行为配置，需要更高优先级，也就是说Order需要小于Ordered.HIGHEST_PRECEDENCE + 5 (越小越优先)，比如使用启动参数`
+  
+  <br>
+  
+  当spring.cloud.bootstrap.name:bootstrap存在时，使用该配置项
+ 
  ```java
  
  String configName = environment
 				.resolvePlaceholders("${spring.cloud.bootstrap.name:bootstrap}");
  
  ```
+ 
+ 
+ 
+ 
