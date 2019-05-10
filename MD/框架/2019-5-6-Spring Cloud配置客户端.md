@@ -88,13 +88,13 @@
  
  ##### Environment
  
- Environment:PropertySource  :  1:1
- PropertySources:
+ Environment:PropertySources  :  1:1
+ PropertySources:PropertySource : 1:N
 [0] PropertySource(Map)
- 	Spring.application.name = spring-cloud-config-client
+ 	spring.application.name = spring-cloud-config-client
 	
 [1] PropertySource(Map)
-	Spring.application.name = spring.cloud.config.client.demo
+	spring.application.name = spring.cloud.config.client.demo
 	
 `取值时,如果key存在，后面的值会被忽略`
  
@@ -269,10 +269,9 @@ public class MyPropertySourceLocator implements PropertySourceLocator {
 
 ```
 
-2.MyPropertySourceLocator 暴露成spring得bean
+2.配置META-INF/spring.factories
 ```java
-    @Bean
-    public MyPropertySourceLocator getPropertySourceLocator(){
-        return new MyPropertySourceLocator();
-    }
+org.springframework.cloud.bootstrap.BootstrapConfiguration=com.xuff.springcloudxuff02.bootstrap.MyConfiguration,\
+com.xuff.springcloudxuff02.bootstrap.MyPropertySourceLocator
+
 ```
