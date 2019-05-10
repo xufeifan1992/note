@@ -233,4 +233,38 @@ public class MyConfiguration implements ApplicationContextInitializer {
 <br>
 
 1.实现`PropertySourceLoader`  
-2.
+
+```java
+package com.xuff.springcloudxuff02.bootstrap;
+
+import org.springframework.cloud.bootstrap.config.PropertySourceLocator;
+import org.springframework.core.env.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by xufei
+ * 2019/5/10
+ */
+public class MyPropertySourceLocator implements PropertySourceLocator {
+    @Override
+    public PropertySource<?> locate(Environment environment) {
+        if (environment instanceof ConfigurableEnvironment) {
+            ConfigurableEnvironment configurableEnvironment = (ConfigurableEnvironment) environment;
+            MutablePropertySources propertySources = configurableEnvironment.getPropertySources();
+            propertySources.addFirst(createPropertySource());
+        }
+        return null;
+    }
+
+    private PropertySource createPropertySource() {
+        Map<String, Object> source = new HashMap<>();
+        source.put("spring.application.name", "xuff");
+        PropertySource propertySource = new MapPropertySource("over-bootstrap-property-source", source);
+
+        return propertySource;
+    }
+}
+
+```
