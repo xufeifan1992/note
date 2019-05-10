@@ -24,7 +24,6 @@
 * ConfigFileApplicationListener
 	* SpringBoot中，用于读取默认以及Profile关联的配置文件(application,properties)
 
-![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557133553453.png)
 
 ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/201956/1557135040181.png)
 
@@ -105,10 +104,7 @@
  #### Bootstrap配置
  
  <br>
- 
- 参考：
- ![enter description here](https://github.com/xufeifan1992/note/tree/master/images/201959/1557308699649.png)
- 
+
  
   #### Bootstrap配置文件
   
