@@ -158,7 +158,7 @@ bootstrap配置文件名称发生了改变“spring-cloud”，意味着有三�
 
 <br>
 
-#### 覆盖远程配置属性
+##### 覆盖远程配置属性
 
 <br>
 
@@ -174,7 +174,7 @@ bootstrap配置文件名称发生了改变“spring-cloud”，意味着有三�
 
 <br>
 
-#### 自定义Bootstrap配置
+##### 自定义Bootstrap配置
 
 1.创建 `META-INF/spring.factors文件(类似于Spring Boot Starter) `  
 2.自定义Bootstrap配置Configuration  
@@ -227,7 +227,7 @@ public class MyConfiguration implements ApplicationContextInitializer {
 
 3.配置META-INF/spring.factories文件，关联Key `org.springframework.cloud.BootstrapConfiguration=com.xuff.springcloudxuff02.bootstrap.MyConfiguration`
 
-#### 自定义Bootstrap配置属性源
+##### 自定义Bootstrap配置属性源
 
 <br>
 <br>
@@ -267,4 +267,12 @@ public class MyPropertySourceLocator implements PropertySourceLocator {
     }
 }
 
+```
+
+2.MyPropertySourceLocator 暴露成spring得bean
+```java
+    @Bean
+    public MyPropertySourceLocator getPropertySourceLocator(){
+        return new MyPropertySourceLocator();
+    }
 ```
