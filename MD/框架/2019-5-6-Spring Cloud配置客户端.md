@@ -38,15 +38,16 @@
 <br>
 <br> 
 
-* SpringBoot配置文件
-	* application.properties
-		* 加载器:PropertiesPropertySourceLoader
-	* application.yml /application.yaml
-		* 加载器:YamlPropertySourceLoader
-* Environment端点
-	* 请求URI:/env
-		* 数据来源:EnvironmentEndPoint
-		* Controller来源:EnvironmentMVCEndpoint
+ #### springBoot配置文件
+* application.properties
+	* 加载器:PropertiesPropertySourceLoader
+* application.yml /application.yaml
+	* 加载器:YamlPropertySourceLoader
+####  Environment端点
+
+* 请求URI:/env
+	* 数据来源:EnvironmentEndPoint
+	* Controller来源:EnvironmentMVCEndpoint
 
 <br>
 
@@ -97,7 +98,8 @@
 	spring.application.name = spring.cloud.config.client.demo
 	
 `取值时,如果key存在，后面的值会被忽略`
- 
+
+
  
  
  #### Bootstrap配置
@@ -270,6 +272,8 @@ public class MyPropertySourceLocator implements PropertySourceLocator {
 ```
 
 2.配置META-INF/spring.factories
+
+	
 ```java
 org.springframework.cloud.bootstrap.BootstrapConfiguration=com.xuff.springcloudxuff02.bootstrap.MyConfiguration,\
 com.xuff.springcloudxuff02.bootstrap.MyPropertySourceLocator
