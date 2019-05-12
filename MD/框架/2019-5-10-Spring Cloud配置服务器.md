@@ -63,9 +63,9 @@ public class SpringCloudXuff03Application {
 ```
 	
 2.创建本地目录
-	`理解Java中的${user.dir},在IDE中是指的当前项目物理路径`
-	在IDEA中src/main/resources目录下，创建一个名为"configs"，它的绝对路径：
-    `${user.dir}/src/main/resources/config`
+	`理解Java中的${user.dir},在IDE中是指的当前项目物理路径`  
+	在IDEA中src/main/resources目录下，创建一个名为"configs"，它的绝对路径：  
+    `${user.dir}/src/main/resources/config`  
 3.配置git本地仓库URI
     
 	
