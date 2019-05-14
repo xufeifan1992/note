@@ -3,13 +3,12 @@
 <br>
 <br>
 
-![enter description here](https://markdown.xiaoshujiang.com/img/spinner.gif "[[[1557562736441]]]" )
-
-
-![enter description here](https://markdown.xiaoshujiang.com/img/spinner.gif "[[[1557568443314]]]" )
-
 
 #### Spring Cloud 配置服务器
+
+
+![enter description here](https://markdown.xiaoshujiang.com/img/spinner.gif "[[[1557643472094]]]" )
+
 
 <br>
 
@@ -66,6 +65,32 @@ public class SpringCloudXuff03Application {
 	`理解Java中的${user.dir},在IDE中是指的当前项目物理路径`  
 	在IDEA中src/main/resources目录下，创建一个名为"configs"，它的绝对路径：  
     `${user.dir}/src/main/resources/config`  
-3.配置git本地仓库URI
-    
-	
+3.给应用创建三个环境的配置项	
+ 
+ ```java
+ -rw-r--r-- 1 xufei 197609 57 5月  12 13:37 segmentfault.properties
+ -rw-r--r-- 1 xufei 197609 61 5月  12 13:40 segmentfault-prod.properties
+ -rw-r--r-- 1 xufei 197609 62 5月  12 13:38 segmentfault-test.properties
+ ```
+
+4.配置git本地仓库URI
+	`##配置服务器文件系统git仓库
+	  ##${user.dir}减少平台文件系统的不一致
+	  spring.cloud.config.server.git.uri = ${user.dir}/src/main/resources/configs`
+	  
+ 5.初始化本地git仓库
+ 
+```java
+   git init   
+   git add .  
+   git commit -m "Frirst commit   "
+   3 files changed, 9 insertions(+)  
+   create mode 100644 segmentfault-prod.properties  
+   create mode 100644 segmentfault-test.properties  
+   create mode 100644 segmentfault.properties  
+```
+<br>
+
+#### 测试配置服务器
+
+` 通过浏览器访问： http://localhost:9090/segmentfault/test`
