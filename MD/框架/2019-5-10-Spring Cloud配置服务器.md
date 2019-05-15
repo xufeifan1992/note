@@ -132,7 +132,13 @@ public class SpringCloudXuff03Application {
 1.激活应用配置服务器  
 	在引导类上标注@EnableConfigServer
 2.配置远程Git仓库地址  
-	```java
-	###配置远程服务器Git仓库(GitHub)
-	spring.cloud.config.server.git.uri = https://github.com/xufeifan1992/tmp
-	```
+```java
+###配置远程服务器Git仓库(GitHub)  
+spring.cloud.config.server.git.uri = https://github.com/xufeifan1992/tmp
+```
+3.提交到Git仓库
+4.
+```java  
+##强制拉去git仓库内容	
+spring.cloud.config.server.git.force-pull=true
+```
