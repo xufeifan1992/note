@@ -142,3 +142,33 @@ spring.cloud.config.server.git.uri = https://github.com/xufeifan1992/tmp
 ##强制拉去git仓库内容	
 spring.cloud.config.server.git.force-pull=true
 ```
+
+### 配置SpringCloud 配置客户端
+
+<br>
+<br>
+
+1.创建Spring Cloud Config Client 应用  
+	创建一个名为spring-cloud-xuff-03-client
+2.创建class path 下面bootstrap.properties
+3.配置bootstrap.properties  
+	配置以"spring.cloud.config."开头配置信息
+	`##配置客户端应用关联的应用  `
+	`spring.cloud.config.name = segmentfault  `  
+	`##关联Profile    `
+	`spring.cloud.config.profile = prod   `
+	`##关联label    `
+	`spring.cloud.config.label = master  `
+	
+
+```java
+##配置客户端应用名称
+spring.application.name=spring-cloud-config-client
+
+##配置客户端端口
+server.port=8080
+
+##端口全开放
+management.endpoints.web.exposure.include=*
+management.endpoints.web.base-path=/actuator
+```
