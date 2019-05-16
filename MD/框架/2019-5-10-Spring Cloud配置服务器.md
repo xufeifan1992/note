@@ -160,15 +160,24 @@ spring.cloud.config.server.git.force-pull=true
 	`##关联label    `
 	`spring.cloud.config.label = master  `
 	
+	
+* applicaiton.properties信息
 
 ```java
-##配置客户端应用名称
-spring.application.name=spring-cloud-config-client
+##配置客户端应用关联的应用
+##spring.cloud.config.name 是可选的
+##如果没有配置,采用${spring.applicaiton.name}
+spring.cloud.config.name = segmentfault
+##关联Profile
+spring.cloud.config.profile = prod
+##关联label
+spring.cloud.config.label = master
+##配置服务器关联uri
+spring.cloud.config.uri=http://localhost:9090
 
-##配置客户端端口
-server.port=8080
-
-##端口全开放
-management.endpoints.web.exposure.include=*
-management.endpoints.web.base-path=/actuator
 ```
+
+<br>
+
+`通过具体配置项name:http://localhost:8080/actuator/env/name`
+
