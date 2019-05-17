@@ -181,3 +181,4 @@ spring.cloud.config.uri=http://localhost:9090
 
 `通过具体配置项name:http://localhost:8080/actuator/env/name`
 
+`注意：配置客户端应用的所关联的分布式配置内容，优先于传统  applicaiton.propertis(applicaiton.yml)或者bootstrap.properties(bootstrap.yml)`
