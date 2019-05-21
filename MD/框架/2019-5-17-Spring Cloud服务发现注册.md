@@ -40,7 +40,7 @@
 	* Eureka Server
 	* Eureka Clinet
 * 服务端:Eureka Server
-	* Eureka Server是Eureka Client的注册服务中心，管理所有注册服务，以及其实例信息和状态等能力
+	* Eureka Server是Eureka Client的注册服务中心，管理所有注册服务，以及其实例信息和状态等能力 
 * 运行Eureka Server
 	* 依赖:org.springframework.cloud:spring-cloud-starter-eureka-server
 	* 激活:@EnableEurekaServer
@@ -62,6 +62,7 @@
 ```
 
 <br>
+
 ##### 激活Eureka服务器  
 
 
