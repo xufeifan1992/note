@@ -84,7 +84,10 @@ public class SpringCloudXuff04EurekaServerApplication {
 ```
 ##### 调整Eureka服务器配置
 
+`application.properties`
+
 <br>
+
 ```java
 ##Spring Cloud Eureka 服务器应用名称
 spring.application.name=spring-cloud-eureka-server
