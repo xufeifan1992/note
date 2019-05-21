@@ -44,3 +44,24 @@
 * 运行Eureka Server
 	* 依赖:org.springframework.cloud:spring-cloud-starter-eureka-server
 	* 激活:@EnableEurekaServer
+
+<br>
+
+#### Eureka服务器
+
+<br>
+<br>
+
+
+引入maven依赖
+```java
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+</dependency>
+```
+
+<br>
+激活Eureka服务器  
+
+
