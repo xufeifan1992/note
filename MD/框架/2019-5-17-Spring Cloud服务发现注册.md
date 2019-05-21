@@ -53,7 +53,7 @@
 <br>
 
 
-引入maven依赖
+##### 引入maven依赖  
 ```java
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
@@ -62,6 +62,36 @@
 ```
 
 <br>
-激活Eureka服务器  
+##### 激活Eureka服务器  
 
 
+```java
+package com.xuff.springcloudxuff04eurekaserver;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+@SpringBootApplication
+@EnableEurekaServer
+public class SpringCloudXuff04EurekaServerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringCloudXuff04EurekaServerApplication.class, args);
+	}
+
+}
+```
+##### 调整Eureka服务器配置
+
+<br>
+```java
+##Spring Cloud Eureka 服务器应用名称
+spring.application.name=spring-cloud-eureka-server
+
+##Spring Cloud Eureka 服务器服务端口
+server.port=9090
+
+##管理端口安全关闭
+management.security.enabled=false
+```
