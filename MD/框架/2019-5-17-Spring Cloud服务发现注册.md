@@ -99,7 +99,7 @@ server.port=9090
 ##管理端口安全关闭
 management.security.enabled=false
 ```
-#### 检测Eureka Server
+##### 检测Eureka Server
 
 <br>
 
@@ -115,3 +115,18 @@ management.security.enabled=false
 Application |AMIs|Availability Zones|Status
 -|-|-|-
 No instances available|-|-|-
+
+<br>
+
+#### Eureka 客户端
+
+<br>
+
+##### 引入依赖
+
+```java
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+```
