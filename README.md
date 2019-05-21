@@ -33,4 +33,5 @@
 * [SpringCloud](https://github.com/xufeifan1992/note/blob/master/MD/%E6%A1%86%E6%9E%B6/2019-5-3-SpringCloud.md)
 * [SpringCloud客户端配置](https://github.com/xufeifan1992/note/blob/master/MD/%E6%A1%86%E6%9E%B6/2019-5-6-Spring%20Cloud%E9%85%8D%E7%BD%AE%E5%AE%A2%E6%88%B7%E7%AB%AF.md)
 * [SpringCloud服务端配置](https://github.com/xufeifan1992/note/blob/master/MD/%E6%A1%86%E6%9E%B6/2019-5-10-Spring%20Cloud%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8.md)
+* [SpringCloud服务注册发现](https://github.com/xufeifan1992/note/blob/master/MD/%E6%A1%86%E6%9E%B6/2019-5-17-Spring%20Cloud%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E6%B3%A8%E5%86%8C.md)
 
