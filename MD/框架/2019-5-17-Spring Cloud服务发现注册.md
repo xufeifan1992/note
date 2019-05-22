@@ -1,4 +1,4 @@
-## 服务发现/注册
+# 服务发现/注册
 
 <br>
 <br>
@@ -30,7 +30,7 @@
 	* 可靠性交迭
 	* 故障探测
 
-### Spring Cloud Netflix Eureka
+## Spring Cloud Netflix Eureka
 
 <br>
 
@@ -47,13 +47,13 @@
 
 <br>
 
-#### Eureka服务器
+### Eureka服务器
 
 <br>
 <br>
 
 
-##### 引入maven依赖  
+#### 引入maven依赖  
 ```java
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
@@ -63,7 +63,7 @@
 
 <br>
 
-##### 激活Eureka服务器  
+#### 激活Eureka服务器  
 
 
 ```java
@@ -83,7 +83,7 @@ public class SpringCloudXuff04EurekaServerApplication {
 
 }
 ```
-##### 调整Eureka服务器配置
+#### 调整Eureka服务器配置
 
 `application.properties`
 
@@ -99,7 +99,7 @@ server.port=9090
 ##管理端口安全关闭
 management.security.enabled=false
 ```
-##### 检测Eureka Server
+#### 检测Eureka Server
 
 <br>
 
@@ -107,8 +107,7 @@ management.security.enabled=false
 
 ![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/2019521/1558422720590.png)
 
->Instances currently registered 
->with Eureka
+>com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
 
 `Eureka Server 既是注册服务器，也是客户端，默认情况需要配置注册中心地址`
 
@@ -118,11 +117,11 @@ No instances available|-|-|-
 
 <br>
 
-#### Eureka 客户端
+### Eureka 客户端
 
 <br>
 
-##### 引入依赖
+#### 引入依赖
 
 ```java
 <dependency>
@@ -130,3 +129,43 @@ No instances available|-|-|-
 	<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 </dependency>
 ```
+
+<br>
+
+#### 激活Eureka客户端
+
+```java
+package com.xuff.springcloudxuff04eurekaclient;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+@SpringBootApplication
+@EnableDiscoveryClient
+//@EnableEurekaClient
+public class SpringCloudXuff04EurekaClientApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringCloudXuff04EurekaClientApplication.class, args);
+    }
+
+}
+
+```
+
+#### 配置Eureka客户端
+
+<br>
+
+运行效果
+发现于Eureka服务器控制台相同异常
+
+>com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+
+#### 需要再次调整Eureka客户端配置
+
+<br>
+
+`eureka.client.serviceUrl.defaultZone`
