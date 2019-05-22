@@ -187,4 +187,18 @@ public class SpringCloudXuff04EurekaClientApplication {
 
 `eureka.client.serviceUrl.defaultZone`
 
+```java
+##Spring Cloud Eureka客户端应用名称
+spring.application.name=spring-cloud-eureka-client
+
+##Spring Cloud Eureka 客户端服务端口
+server.port=9191
+
+##管理端口安全失效
+management.security.enabled=false
+
+##Spring Cloud Eureka 客户端 注册到Eureka服务器
+eureka.client.serviceUrl.defaultZone=http://localhost:9090/eureka
+```
+
  
