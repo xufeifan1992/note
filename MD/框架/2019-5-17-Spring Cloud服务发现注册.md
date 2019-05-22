@@ -115,6 +115,23 @@ Application |AMIs|Availability Zones|Status
 -|-|-|-
 No instances available|-|-|-
 
+#### 解决问题的方法
+
+<br>
+
+```java
+##Spring Cloud Eureka 服务器作为注册中心
+##通常情况下，不需要再注册到其他注册中心去
+##同时，它也不需要获取客户端信息
+##取消向注册中心注册
+eureka.client.register-with-eureka=false
+
+##取消向注册中心获取注册信息(应用,实例信息)
+eureka.client.fetch-registry=false
+```
+
+
+
 <br>
 
 ### Eureka 客户端
@@ -169,3 +186,5 @@ public class SpringCloudXuff04EurekaClientApplication {
 <br>
 
 `eureka.client.serviceUrl.defaultZone`
+
+ 
