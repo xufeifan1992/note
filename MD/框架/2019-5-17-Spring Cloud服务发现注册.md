@@ -203,4 +203,109 @@ eureka.client.serviceUrl.defaultZone=http://localhost:9090/eureka
 
  <br>
  
+ ### Spring Cloud 于Eureka整合
  
+ <br>
+ <br>
+ 
+ #### 调整 Spring Cloud Config Server 作为Eureka客户端
+ 
+ <br>
+ <br>
+ 
+ ##### 引入Maven依赖
+ 
+ ```java
+<!--增加 Eureka Client -->
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-eureka</artifactId>
+</dependency>
+ ```
+ 
+ ##### 激活Eureka客户端
+ 
+ ```java
+package com.xuff.springcloudxuff04configserver;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.config.server.EnableConfigServer;
+
+@SpringBootApplication
+@EnableConfigServer
+@EnableDiscoveryClient
+public class SpringCloudXuff04ConfigServerApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringCloudXuff04ConfigServerApplication.class, args);
+    }
+
+}
+ ```
+ 
+ ##### 调整Eureka客户端配置
+ 
+ ```java
+ ##配置服务器应用名称
+spring.application.name=spring-cloud-config-server
+ 
+##配置服务端口
+server.port=7070
+
+##管理端口安全失效
+management.security.enabled=false
+
+##配置服务器文件系统git仓库
+##${user.dir}减少文件系统的不一致
+#spring.cloud.config.server.git.uri=${user.dir}/src/main/resources/configs
+
+## 配置服务器远程Git仓库(GitHub)
+spring.cloud.config.server.git.uri=https://github.com/xufeifan1992/tmp
+
+##强制拉取Git内容
+spring.cloud.config.server.git.force-pull=true
+
+##spring-cloud-config-server注册到Eureka服务器
+eureka.client.serviceUrl.defaultZone=http://localhost:9090/eureka
+ ```
+ 
+ <br>
+ <br>
+ 
+ #### 调整spring-cloud-eureka-client成为Config客户端
+ 
+ ##### 引入spring-cloud-starter-config-client 依赖
+ 
+ ```java
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-config</artifactId>
+</dependency>
+ ```
+ 
+ ##### 创建bootstrap.properties
+ ##### 配置Config客户端配置
+ 
+ bootstrap.properties
+ 
+ ```java
+## 注意：当前应用需要提前获取应用信息，那么将 Eureka 的配置信息提前至 bootstrap.properties 文件
+## 原因：bootstrap 上下文是 Spring Boot 上下文的 父 上下文，那么它最先加载，因此需要最优先加载 Eureka 注册信息
+## Spring Cloud Eureka 客户端 注册到 Eureka 服务器
+eureka.client.serviceUrl.defaultZone = http://localhost:9090/eureka
+
+## 配置客户端应用关联的应用
+## spring.cloud.config.name 是可选的
+## 如果没有配置，采用 ${spring.application.name}
+spring.cloud.config.name = segmentfault
+## 关联 profile
+spring.cloud.config.profile = prod
+## 关联 label
+spring.cloud.config.label = master
+## 激活 Config 服务器发现
+spring.cloud.config.discovery.enabled = true
+## 配置 Config 服务器的应用名称（Service ID）
+spring.cloud.config.discovery.serviceId = spring-cloud-config-server
+ ```
