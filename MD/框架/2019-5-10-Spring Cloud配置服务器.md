@@ -1,14 +1,12 @@
-### 分布式配置
+## 分布式配置
 
 <br>
 <br>
 
 
-#### Spring Cloud 配置服务器
+### Spring Cloud 配置服务器
 
-
-![enter description here](https://markdown.xiaoshujiang.com/img/spinner.gif "[[[1557643472094]]]" )
-
+![enter description here](https://www.github.com/xufeifan1992/note/raw/master/images/2019514/1557806742470.png)
 
 <br>
 
@@ -33,7 +31,7 @@
 	 * /{label}/{application}-{profile}.properties
 
 
-#### 基于文件系统(File System)
+### 基于文件系统(File System)
 ##### 创建本地仓库
 
 <br>
@@ -94,3 +92,93 @@ public class SpringCloudXuff03Application {
 #### 测试配置服务器
 
 ` 通过浏览器访问： http://localhost:9090/segmentfault/test`
+
+```json
+{
+	name: "segmentfault",
+	profiles: [
+			"test"
+	],
+	label: null,
+	version: "3cef0f526c3ffa34712dba223ff2ee30faeb251d",
+	state: null,
+	propertySources: [
+			{
+				name: "C:\person\idea_code\spring-cloud-xuff-03/src/main/resources/configs/segmentfault-							test.properties",
+				source: {
+				name: "segmentfault-test"
+						}
+			},
+{
+	name: "C:\person\idea_code\spring-cloud-xuff-								03/src/main/resources/configs/segmentfault.properties",
+	source: {
+	name: "segmentfault"
+			}
+	}
+	]
+}
+```
+`注意：当制定了profile时，默认的profile(不指定)配置也会输出`
+
+<br>
+<br>
+
+### 基于远程git仓库
+
+
+<br>
+<br>
+
+1.激活应用配置服务器  
+	在引导类上标注@EnableConfigServer
+2.配置远程Git仓库地址  
+```java
+###配置远程服务器Git仓库(GitHub)  
+spring.cloud.config.server.git.uri = https://github.com/xufeifan1992/tmp
+```
+3.提交到Git仓库
+4.
+```java  
+##强制拉去git仓库内容	
+spring.cloud.config.server.git.force-pull=true
+```
+
+### 配置SpringCloud 配置客户端
+
+<br>
+<br>
+
+1.创建Spring Cloud Config Client 应用  
+	创建一个名为spring-cloud-xuff-03-client
+2.创建class path 下面bootstrap.properties
+3.配置bootstrap.properties  
+	配置以"spring.cloud.config."开头配置信息
+	`##配置客户端应用关联的应用  `
+	`spring.cloud.config.name = segmentfault  `  
+	`##关联Profile    `
+	`spring.cloud.config.profile = prod   `
+	`##关联label    `
+	`spring.cloud.config.label = master  `
+	
+	
+* applicaiton.properties信息
+
+```java
+##配置客户端应用关联的应用
+##spring.cloud.config.name 是可选的
+##如果没有配置,采用${spring.applicaiton.name}
+spring.cloud.config.name = segmentfault
+##关联Profile
+spring.cloud.config.profile = prod
+##关联label
+spring.cloud.config.label = master
+##配置服务器关联uri
+spring.cloud.config.uri=http://localhost:9090
+
+```
+
+<br>
+
+`通过具体配置项name:http://localhost:8080/actuator/env/name`
+
+`注意：配置客户端应用的所关联的分布式配置内容，优先于传统  applicaiton.propertis(applicaiton.yml)或者bootstrap.properties(bootstrap.yml)`
