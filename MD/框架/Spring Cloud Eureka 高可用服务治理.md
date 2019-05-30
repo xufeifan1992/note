@@ -69,6 +69,78 @@ public class SpringCloudXuff05EurekaClientApplication {
 
 ### Eureka 服务器
 
+#### 配置高可用Eureka服务器
+
+##### 配置公用Eureka服务器配置
+
+`application.properties`
+
+```properties
+## 定义应用名称
+spring.application.name=spring-cloud-eureka-server
+
+##配置服务端口
+server.port=9090
+
+##管理端安全失效
+management.security.enabled=false
+
+##取消注册中心注册
+eureka.client.register-with-eureka=false
+###取消像注册中心获取注册信息
+eureka.client.fetch-registry=false
+##解决peer/集群链接问题
+eureka.instance.hostname=localhost
+eureka.client.service-url.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka
+
+```
+
+
+
+
+
+##### 配置Peer 1 Eureka 服务器
+
+`application-peer1.properties`（单机情况相当于profile=“peer1”）
+
+```properties
+
+#peer 1 完整配置
+
+##配置服务端口
+##peer1 端口9090
+server.port=9090
+
+##peer2主机:localhost,端口9091
+peer2.server.host=localhost
+peer2.server.port=9092
+
+# Eureka 注册信息
+eureka.client.service-url.defaultZone=http://${peer2.server.host=localhost}:${peer2.server.port}/eureka
+
+```
+
+##### 配置Peer 2 Eureka 服务器
+
+`application-peer2.properties`（单机情况相当于profile=“peer1”）
+
+```properties
+
+#peer 2 完整配置
+
+##配置服务端口
+##peer2 端口9090
+server.port=9090
+
+##peer1主机:localhost,端口9090
+peer1.server.host=localhost
+peer1.server.port=9090
+
+# Eureka 注册信息
+eureka.client.service-url.defaultZone=http://${peer1.server.host=localhost}:${peer1.server.port}/eureka
+
+```
+
 
 
  
