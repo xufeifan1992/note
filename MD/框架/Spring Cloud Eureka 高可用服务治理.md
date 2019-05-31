@@ -85,13 +85,11 @@ server.port=9090
 ##管理端安全失效
 management.security.enabled=false
 
-##取消注册中心注册
+##注册中心注册
 eureka.client.register-with-eureka=false
-###取消像注册中心获取注册信息
+###向注册中心获取注册信息
 eureka.client.fetch-registry=false
-##解决peer/集群链接问题
-eureka.instance.hostname=localhost
-eureka.client.service-url.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka
+
 
 ```
 
@@ -120,6 +118,12 @@ eureka.client.service-url.defaultZone=http://${peer2.server.host=localhost}:${pe
 
 ```
 
+##### 启动Peer 1 Eureka服务器
+
+通过启动参数 --spring.profiles.active=peer1,相当于读取了`application-peer1.properties`和`application.properties`
+
+
+
 ##### 配置Peer 2 Eureka 服务器
 
 `application-peer2.properties`（单机情况相当于profile=“peer1”）
@@ -129,21 +133,30 @@ eureka.client.service-url.defaultZone=http://${peer2.server.host=localhost}:${pe
 #peer 2 完整配置
 
 ##配置服务端口
-##peer2 端口9090
+##peer2 端口9091
 server.port=9090
 
 ##peer1主机:localhost,端口9090
 peer1.server.host=localhost
-peer1.server.port=9090
+peer1.server.port=9091
 
 # Eureka 注册信息
 eureka.client.service-url.defaultZone=http://${peer1.server.host=localhost}:${peer1.server.port}/eureka
 
 ```
 
+##### 启动Peer 2 Eureka服务器
 
+通过启动参数 --spring.profiles.active=peer2,相当于读取了`application-peer2.properties`和`application.properties`
 
- 
+ ### Spring Cloud Consul
+
+* Consul组件
+  * 服务发现(Service Discovery)
+  * 健康检查(Health Check)
+  * 键值存储(KV Store)
+  * 多数据中心(Multi Datacenter)
+* 理解Raft协议:http://thesecretlivesofdata.com/raft
 
 
 
