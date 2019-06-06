@@ -154,13 +154,140 @@ eureka.client.service-url.defaultZone=http://${peer1.server.host=localhost}:${pe
 * Consul组件
   * 服务发现(Service Discovery)
   * 健康检查(Health Check)
-  * 键值存储(KV Store)
+  * 键值存储(KV Store) 
   * 多数据中心(Multi Datacenter)
 * 理解Raft协议:http://thesecretlivesofdata.com/raft
 
 
 
+#### 引入依赖
 
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+</dependency>
+```
+
+#### 激活服务发现客户端
+
+```java
+package com.xuff.springcloudxuff05consulclient;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+@SpringBootApplication
+@EnableDiscoveryClient
+public class SpringCloudXuff05ConsulClientApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringCloudXuff05ConsulClientApplication.class, args);
+    }
+
+}
+
+```
+
+#### 利用服务发现API操作
+
+##### 配置应用信息
+
+```properties
+## 应用名称
+spring.application.name=spring-cloud-consul
+
+## 服务端口
+server.port=8080
+
+## 安全管理失效
+management.security.enabled=false
+
+## 配置连接Consul
+### Consul 主机地址
+spring.cloud.consul.host=localhost
+### Consul 服务端口
+spring.cloud.consul.port=8500
+```
+
+
+
+##### 编写`DiscoverClient`Controller
+
+```java
+package com.xuff.springcloudxuff05consulclient;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Created by xufei
+ * 2019/6/5
+ */
+@RestController
+public class DiscoverClientController {
+
+    private final DiscoveryClient discoveryClient;
+
+    private final String currentAoolicationName;
+
+    @Autowired
+    public DiscoverClientController(DiscoveryClient discoveryClient, @Value("spring.application.name") String currentApplicationName) {
+        this.discoveryClient = discoveryClient;
+        this.currentAoolicationName = currentApplicationName;
+    }
+
+    /**
+     * 获取当前应用信息
+     * @return
+     */
+    public ServiceInstance getCurrentServiceInstance() {
+        return discoveryClient.getInstances(currentAoolicationName).get(0);
+    }
+
+    /**
+     * 获取所有服务名
+     *
+     * @return
+     */
+    @GetMapping("/list/services")
+    public List<String> listServices() {
+        return discoveryClient.getServices();
+    }
+
+    /**
+     * 获取所有服务实例信息
+     *
+     * @return
+     */
+    @GetMapping("/list/service-instances")
+    public List<ServiceInstance> listServiceInstances() {
+        List<String> services = listServices();
+
+        List<ServiceInstance> serviceInstances = new LinkedList<>();
+
+        services.forEach(serviceName -> {
+            serviceInstances.addAll(discoveryClient.getInstances(serviceName));
+        });
+
+        return serviceInstances;
+    }
+
+}
+
+```
+
+
+
+  
 
  
 
