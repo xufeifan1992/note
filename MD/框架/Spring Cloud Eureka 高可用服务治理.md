@@ -249,6 +249,7 @@ public class DiscoverClientController {
      * 获取当前应用信息
      * @return
      */
+    @GetMapping("/current/service-instances")
     public ServiceInstance getCurrentServiceInstance() {
         return discoveryClient.getInstances(currentAoolicationName).get(0);
     }
