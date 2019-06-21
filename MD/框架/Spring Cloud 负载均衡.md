@@ -19,3 +19,10 @@
   * 固定优先级(Fixed Priority)
   * 轮询(Round-Robin)
   * 多级别队列(Multilevel Queue)
+* 特性
+  * 非对称负载
+  * 分布式拒绝服务攻击保护
+  * 直接服务返回
+  * 健康检查
+  * 优先级队列
+  * 其他
