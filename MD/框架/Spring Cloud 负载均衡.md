@@ -27,7 +27,11 @@
   * 优先级队列
   * 其他
 
-
+* Spring Framework
+  * RestTemplate
+  * 序列化/反序列化:HeepMessageConvertor
+  * 实现适配：ClientHttpRequestFactory
+  * 请求拦截：ClientHttpRequestInterceptor
 
 
 
