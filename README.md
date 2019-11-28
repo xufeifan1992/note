@@ -27,6 +27,7 @@
 * [Activiti6.0](https://github.com/xufeifan1992/note/blob/master/MD/activiti/%E5%B7%A5%E4%BD%9C%E6%B5%81-activiti6.0.md)
 * [Activiti6.0动态生成流程图demo](https://github.com/xufeifan1992/note/blob/master/MD/activiti/activiti6.0%20%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E6%B5%81%E7%A8%8B%E5%9B%BE%2C%E4%BC%9A%E7%AD%BE%E6%B5%81%E7%A8%8B.md)
 * [Activiti6.0实现自由跳转代码](https://github.com/xufeifan1992/note/blob/master/MD/activiti/activiti6.0%E5%AE%9E%E7%8E%B0%E8%87%AA%E7%94%B1%E8%B7%B3%E8%BD%AC.md)
+* [Activiti6.0实现获取下一个节点代码](https://github.com/xufeifan1992/note/blob/master/MD/activiti/Activiti6.0%E5%AE%9E%E7%8E%B0%E8%8E%B7%E5%8F%96%E4%B8%8B%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81.md)
 <br>
 <br>
 
