@@ -19,6 +19,7 @@
 
 <span id="mysql">MySQL</span>
 * [MySQL的隔离级别](https://github.com/xufeifan1992/note/blob/master/MD/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB.md)
+* [MySQL中文首字拼音以及英文首字母混合排序函数](https://github.com/xufeifan1992/note/blob/master/MD/MySQL/MySQL%E4%B8%AD%E6%96%87%E9%A6%96%E5%AD%97%E6%AF%8D%EF%BC%8C%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D%E6%B7%B7%E5%90%88%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0.md)
 
 <br>
 <br>
