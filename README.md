@@ -1,5 +1,5 @@
 # 笔记
-[数据结构](#dataStructure)|[MySQL](#mysql)|[Activiti6.0](#activiti6.0)|[框架](#框架)|[事务](#事务)
+[数据结构](#dataStructure)|[MySQL](#mysql)|[Activiti6.0](#activiti6.0)|[框架](#框架)|[事务](#事务)|[小玩意](#小玩意)
 -|-|-|-|-
 
 
@@ -45,3 +45,7 @@
 <span id = "事务">事务</span>
 * [事务的传播](https://github.com/xufeifan1992/note/blob/master/MD/%E4%BA%8B%E5%8A%A1/%E4%BA%8B%E5%8A%A1%E7%9A%84%E4%BC%A0%E6%92%AD.md)
 
+<br>
+<br>
+<span id = "小玩意">小玩意</span>
+* [cookie和session](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/cookie%E5%92%8Csession/Cookie%E5%92%8CSession.md)
