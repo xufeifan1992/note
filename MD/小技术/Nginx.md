@@ -311,3 +311,126 @@ keepalive_timeout  65;
 
 
 
+### Nginx常用命令
+
+* ./nginx -s stop *强制关闭nginx(不太好的方式)*
+
+* ./nginx -s quit *比较有好的退出nginx*
+
+* ./nginx -t *检测配置文件*
+
+* ./nginx -v *查看nginx版本号*
+
+* ./nginx -V *详细查看nginx具体信息*
+
+* ./nginx -? *提供帮助*
+
+  * 
+
+  ```java
+  [root@localhost sbin]# ./nginx -?
+  nginx version: nginx/1.16.1
+  Usage: nginx [-?hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]
+  
+  Options:
+    -?,-h         : this help
+    -v            : show version and exit
+    -V            : show version and configure options then exit
+    -t            : test configuration and exit
+    -T            : test configuration, dump it and exit
+    -q            : suppress non-error messages during configuration testing
+    -s signal     : send signal to a master process: stop, quit, reopen, reload
+    -p prefix     : set prefix path (default: /usr/local/nginx/)
+    -c filename   : set configuration file (default: conf/nginx.conf)
+    -g directives : set global directives out of configuration file
+      
+  ```
+
+
+
+## Nginx日志切割-定时
+
+### 使用定时任务
+
+1. 安装定时任务：
+
+   ```
+   yum install crontabs
+   ```
+
+2. `crontab -e` 编辑并且添加一行新的任务：
+
+   ```
+   */1 * * * * /usr/local/nginx/sbin/cut_my_log.sh
+   ```
+
+3. 重启定时任务：
+
+   ```
+   service crond restart
+   ```
+
+- 附：常用定时任务命令：
+
+  ```
+  service crond start         //启动服务
+  service crond stop          //关闭服务
+  service crond restart       //重启服务
+  service crond reload        //重新载入配置
+  crontab -e                  // 编辑任务
+  crontab -l                  // 查看任务列表
+  ```
+
+### 定时任务表达式：
+
+Cron表达式是，分为5或6个域，每个域代表一个含义，如下所示：
+
+|          | 分   | 时   | 日   | 月   | 星期几 | 年（可选）       |
+| :------- | :--- | :--- | :--- | :--- | :----- | :--------------- |
+| 取值范围 | 0-59 | 0-23 | 1-31 | 1-12 | 1-7    | 2019/2020/2021/… |
+
+### 常用表达式：
+
+- 每分钟执行：
+
+  ```
+  */1 * * * *
+  ```
+
+- 每日凌晨（每天晚上23:59）执行：
+
+  ```
+  59 23 * * *
+  ```
+
+- 每日凌晨1点执行：
+
+  ```
+  0 1 * * *
+  ```
+
+# root 与 alias
+
+假如服务器路径为：/home/imooc/files/img/face.png
+
+- root 路径完全匹配访问
+  配置的时候为：
+
+  ```xml
+  location /imooc {
+      root /home
+  }
+  ```
+
+用户访问的时候请求为：`url:port/imooc/files/img/face.png`
+
+- alias 可以为你的路径做一个别名，对用户透明
+  配置的时候为：
+
+  ```xml
+  location /hello {
+      alias /home/imooc
+  }
+  ```
+
+  用户访问的时候请求为：`url:port/hello/files/img/face.png`，如此相当于为目录`imooc`做一个自定义的别名。
