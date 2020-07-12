@@ -434,3 +434,27 @@ Cron表达式是，分为5或6个域，每个域代表一个含义，如下所�
   ```
 
   用户访问的时候请求为：`url:port/hello/files/img/face.png`，如此相当于为目录`imooc`做一个自定义的别名。
+
+
+
+### Nginx 配置跨域访问以及静态资源防盗链
+
+```java
+				#允许跨域请求的域，*代表所有
+        add_header 'Access-Control-Allow-Origin' *;
+        #允许带上Cookie请求
+        add_header 'Access-Control-Allow-Credentials' 'true';
+        #允许请求的方法，比如 GET/POST/PUT/DELETE
+        add_header 'Access-Control-Allow-Methods' *;
+        #允许请求的header
+        add_header 'Access-Control-Allow-Headers' *;
+			
+				
+        #对源站点验证
+        valid_referers *.imooc.com;
+        #非法引入会进入下方判断
+        if ($invalid_referer) {
+             return 404;
+        }
+```
+
