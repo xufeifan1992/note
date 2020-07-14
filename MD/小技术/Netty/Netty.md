@@ -1,0 +1,79 @@
+# Netty
+
+
+
+## Tcp通信与Netty
+
+
+
+***Scoket基础概念***
+
+* Socket又称 “套接字”，应用程序通常通过 “套接字” 向网络发出请求或者应答网络请求Socket、ServerSocket类库位于java.net包中。ServerSocket用于服务器端，Socket是建立网络连接时使用的。在连接成功时，应用程序两端都会产生一个Socket实例，操作这个实例，完成所需的会话。对于一个网络连接来说，套接字是平等的，不因为在服务器端或在客户端而产生不同级别。不管是Socket还是ServerSocket它们的工作都是通过SocketImpl类及其子类完成的。
+
+* 套接字之间的连接过程可以分为四个步骤：
+
+  - 服务器监听；
+
+  - 客户端请求服务器；
+
+  - 服务器确认；
+
+  - 客户端确认，进行通信。
+
+  - 经常在面试的时候，都会被问到TCP的基础问题：什么是三次握手，四次挥手（对于建立连接和断开连接），为什么需要三次握手，为什么需要四次挥手（这些次数是怎么来的）？如下图，在建立连接的时候进行3次握手；
+
+    ![图片描述](https://climg.mukewang.com/5ee6d92e095b37e015800306.png)
+
+  - 同理，我们可以推理出四次挥手的基本原理，如下表格所示：
+
+    ![图片描述](https://climg.mukewang.com/5ee6d93909ec30d413520287.png)
+
+  - TCP客户端发送一个FIN，用来关闭客户到服务器的
+
+  - 服务器收到这个FIN，它发回一个ACK，确认序号为收到的序号加1。和SYN一样，一个FIN将占用一个序号
+
+  - 服务器关闭客户端的连接，发送一个FIN给客户端
+
+  - 客户端发回ACK[报文](https://baike.baidu.com/item/报文)确认，并将确认序号设置为收到序号加1
+
+    - 总结：无论三次握手还是四次挥手，都是来校验对方数据包的 “收发能力”！
+    - ![img](https://pics3.baidu.com/feed/caef76094b36acaf042ba27e2f07751503e99c48.jpeg?token=82e7f4e96e77dc4f3a6b5d9d1e36af2c&s=C150C53249BAC4CA586931D6030050B2)
+
+
+
+
+
+## Netty
+
+
+
+***我们为为什么选择Netty***
+
+
+
+- 我们再也不必去编写复杂的代码逻辑去实现通信，我们再也不需要去考虑性能问题，不需要考虑编解码问题，半包读写问题等，这些强大的Netty已经帮我们实现好了，我们只需要使用即可！
+- Netty是也就最流行的NIO框架，他的健壮性、功能、性能、可定制性和可扩展性在同类框架都是首屈一指的。它已经得到成百上千的商业/商用项目验证，如Hadoop的RPC框架Avro、以及我们之后学习的JMS框架,强大的RocketMQ、还有主流的分布式通信框架Dubbo等等；
+- Netty是一个NIO client-server(客户端服务器)框架，使用Netty可以快速开发网络应用，例如服务器和客户端协议。Netty提供了一种新的方式来使开发网络应用程序，这种新的方式使得它很容易使用和有很强的扩展性。Netty的内部实现是很复杂的，但是Netty提供了简单易用的api从网络处理代码中解耦业务逻辑。Netty是完全基于NIO实现的，所以整个Netty都是异步的。
+- Netty架构图：
+
+![图片描述](https://climg.mukewang.com/5ee6d94b0915802d09090528.png)
+
+- Netty特性：
+
+  ![图片描述](https://climg.mukewang.com/5ee6d959099a30ad10110512.png)
+
+
+
+### Netty技术选型与核心浅析
+
+* 什么应用场景选择RPC,HTTP,MQ,Netty
+  * RPC：系统间即时访问，同步服务调用
+  * HTTP：外部提供api接口，非高并发场景，非大数据报文传输
+  * MQ：微服务之间解耦，流量削峰
+  * Netty：底层基础通信，数据传输，数据同步
+* Netty基础核心点
+  * EventLoop,Reactor模型
+  * pIpeline事件传播
+  * Netty的ChannelHandler
+  * Netty的Buffer
+  * 线程
