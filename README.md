@@ -1,5 +1,5 @@
 # 笔记
-[数据结构](#dataStructure)|[MySQL](#mysql)|[Activiti6.0](#activiti6.0)|[框架](#框架)|[事务](#事务)|[小玩意](#小玩意)
+[数据结构](#dataStructure)|[MySQL](#mysql)|[Activiti6.0](#activiti6.0)|[框架](#框架)|[事务](#事务)|[小玩意](#小玩意)|[Nginx](#Nginx)
 -|-|-|-|-|-
 
 
@@ -50,3 +50,10 @@
 
 <span id = "小玩意">小玩意</span>
 * [cookie和session](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/cookie%E5%92%8Csession/Cookie%E5%92%8CSession.md)
+
+<span id = "Nginx">Nginx</span>
+* [Nginx](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/nginx/Nginx.md)
+* [Nginx 配置域名](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/nginx/Nginx%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D.md)
+* [动静分离](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/nginx/%E5%8A%A8%E9%9D%99%E5%88%86%E7%A6%BB.md)
+* [nginx缓存](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/nginx/%E7%BC%93%E5%AD%98.md)
+* [负载均衡](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/nginx/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1-%E8%BD%AE%E8%AE%AD.md)
