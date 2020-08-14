@@ -331,7 +331,7 @@
 >
 > ​	10.匹配命令回复处理器write事件，执行回写ok等操作
 
-![image-redis线程模型](https://github.com/xufeifan1992/note/blob/master/images/20200814/redis/1597371614037.jpg)
+![image-20200814101808393](https://github.com/xufeifan1992/note/blob/master/images/20200814/redis/1597371614037.jpg)
 
 
 
@@ -343,4 +343,7 @@
 > * 文件时间分发器
 >   * 连接应答处理器   用来与客户端保持连接
 >   * 命令请求处理器
+>   * 
+>   * 
+>   * 
 >   * 命令回复处理器
