@@ -305,3 +305,42 @@
 >
 > zrem zset value 删除member
 
+
+
+### Redis的线程模型
+
+> 线程模型执行流程
+>
+> ​	1.redis-server启动，连接应答处理器创建read(AE_Readable)事件
+>
+> ​    2.redis-cli 通过socket客户端与redis-server建立socket连接
+>
+> ​    3.server-socker将请求转交给多路复用器
+>
+> ​	4.多路复用器交给文件事件分配器(队列)
+>
+> ​	5.连接应答处理器与客户端进行匹配后将请求转交给命令请求处理器
+>
+> ​	6.命令请求处理器识别并执行命令
+>
+> ​	7.命令回复处理器write(AE_Writable)标记回写内容
+>
+> ​	8.redis-cli进行回写write交给server-socket
+>
+> ​	9.多路复用器将请求丢给文件事件分配器
+>
+> ​	10.匹配命令回复处理器write事件，执行回写ok等操作
+
+![image-20200814101808393](/Users/xu/Library/Application%20Support/typora-user-images/image-20200814101808393.png)
+
+
+
+> redis-cli 客户端socket
+>
+> redis-server
+>
+> * 多路复用器
+> * 文件时间分发器
+>   * 连接应答处理器   用来与客户端保持连接
+>   * 命令请求处理器
+>   * 命令回复处理器
