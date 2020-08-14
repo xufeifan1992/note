@@ -331,7 +331,7 @@
 >
 > ​	10.匹配命令回复处理器write事件，执行回写ok等操作
 
-![image-20200814101808393](https://github.com/xufeifan1992/note/blob/master/images/20200814/redis/1597371614037.jpg)
+![image1111-20200814101808393](https://github.com/xufeifan1992/note/blob/master/images/20200814/redis/1597371614037.jpg)
 
 > redis-cli 客户端socket
 >
