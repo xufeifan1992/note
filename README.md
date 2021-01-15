@@ -50,6 +50,7 @@
 
 <span id = "小玩意">小玩意</span>
 * [cookie和session](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/cookie%E5%92%8Csession/Cookie%E5%92%8CSession.md)
+* [单例模式](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md)
 
 <span id = "Nginx">Nginx</span>
 * [Nginx](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/nginx/Nginx.md)
