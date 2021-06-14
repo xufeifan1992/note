@@ -51,6 +51,8 @@
 <span id = "小玩意">小玩意</span>
 * [cookie和session](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/cookie%E5%92%8Csession/Cookie%E5%92%8CSession.md)
 * [单例模式](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md)
+* [多线程](https://github.com/xufeifan1992/note/blob/master/MD/Java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B.md)
+* [JVM调优](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/JVM/JVM%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98.md)
 
 <span id = "Nginx">Nginx</span>
 * [Nginx](https://github.com/xufeifan1992/note/blob/master/MD/%E5%B0%8F%E6%8A%80%E6%9C%AF/nginx/Nginx.md)
