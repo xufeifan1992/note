@@ -186,11 +186,11 @@ def analysis(url):
         # 该方法根据文章url对html进行处理，使图片显示
         content_info = ws_api.get_article_content(url)
 
-        # 文章标题
-        html = requests.get(url).text
-        con = etree.HTML(html)
+        # 文章内容
+        doc = requests.get(url).text
+        html = etree.HTML(doc)
         # 获取标题
-        title = con.xpath('//h2[@class="rich_media_title"]/text()')[0]
+        title = html.xpath('//h2[@class="rich_media_title"]/text()')[0]
     except:
         return False
 
@@ -198,10 +198,12 @@ def analysis(url):
 
 
 """
-    此脚本版本要求 flask-0.11 Werkzeug-0.14.1 wechatsogou-4.5.4 否则出现不兼容
+此脚本版本要求:
+    flask-0.11 Werkzeug-0.14.1 wechatsogou-4.5.4 否则出现不兼容
 """
 if __name__ == '__main__':
     server.run(port=8898, debug=True, host='0.0.0.0', threaded=True)
+
 
 
 ```
